@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleExecutable</key><string>ScreenshotShelf</string>
+    <key>CFBundleIdentifier</key><string>local.kanishk.ScreenshotShelf</string>
+    <key>CFBundleName</key><string>Screenshot Shelf</string>
+    <key>CFBundleDisplayName</key><string>Screenshot Shelf</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>1.1.0</string>
+    <key>CFBundleVersion</key><string>2</string>
+    <key>CFBundleIconFile</key><string>AppIcon</string>
+    <key>NSHumanReadableCopyright</key><string>Copyright © 2026 Kanishk Vashisht. MIT License.</string>
+    <key>LSMinimumSystemVersion</key><string>13.0</string>
+    <key>LSUIElement</key><true/>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSDesktopFolderUsageDescription</key><string>Screenshot Shelf reads your screenshots to show previews you can drag into other apps.</string>
+    <key>NSDocumentsFolderUsageDescription</key><string>Screenshot Shelf reads screenshots if you choose a folder in Documents.</string>
+    <key>NSDownloadsFolderUsageDescription</key><string>Screenshot Shelf reads screenshots if you choose a folder in Downloads.</string>
+</dict></plist>

@@ -1,0 +1,37 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test discovery and hold gestures
+        run: ./test.sh
+      - name: Build universal app
+        run: ./build.sh --universal
+      - name: Verify bundle
+        run: |
+          plutil -lint 'build/Screenshot Shelf.app/Contents/Info.plist'
+          codesign --verify --deep --strict 'build/Screenshot Shelf.app'
+          lipo 'build/Screenshot Shelf.app/Contents/MacOS/ScreenshotShelf' -verify_arch arm64 x86_64
+      - name: Archive app
+        run: ditto -c -k --sequesterRsrc --keepParent 'build/Screenshot Shelf.app' build/Screenshot-Shelf-universal.zip
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: Screenshot-Shelf-universal
+          path: build/Screenshot-Shelf-universal.zip
+          retention-days: 14

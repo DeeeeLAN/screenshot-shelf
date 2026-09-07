@@ -1,0 +1,19 @@
+Screenshot Shelf — macOS 13 or newer
+
+1. Drag Screenshot Shelf.app into Applications.
+2. Open Screenshot Shelf. Its photo icon appears in the menu bar.
+3. Hold Command + Shift + S to see your recent screenshots.
+4. Drag a thumbnail into another app. Release any shortcut key to hide the shelf.
+   A drag already in progress can continue after the shelf closes.
+
+Click the menu bar icon to choose a screenshot folder or enable Launch at Login.
+Allow Desktop access when macOS asks, or choose your folder from the menu.
+
+This build is ad-hoc signed, not Apple-notarized. macOS may require explicit
+approval in System Settings > Privacy & Security to open a downloaded copy.
+You can also build from the source code using Apple's command line tools.
+
+To uninstall: disable Launch at Login in the menu, quit the app, then move it
+to the Trash. Your screenshots are never moved or deleted by the app.
+
+Source and releases: https://github.com/KanishkVashisht/screenshot-shelf
